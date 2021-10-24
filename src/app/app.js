@@ -1,16 +1,9 @@
 const { GraphQLServer } = require('graphql-yoga')
 const path = require('path')
 const cors = require('cors')
-
-const logger = require('pino')({
-    level: 'debug',
-    prettyPrint: {
-        levelFirst: true,
-        colorize: true
-    }
-})
-
+const { logger } = require('../logs/pinoLoggers')
 const pinoHttp = require('pino-http')({ logger })
+
 
 
 const { resolvers } = require('../routers/resolvers')

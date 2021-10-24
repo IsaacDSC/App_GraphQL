@@ -12,8 +12,10 @@
     "license": "ISC",
     "dependencies": {
         "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
         "graphql": "^0.13.2",
         "graphql-yoga": "^1.18.3",
+        "knex": "^0.95.11",
         "mysql": "^2.18.1",
         "pino": "^7.0.3",
         "pino-http": "^5.8.0",
