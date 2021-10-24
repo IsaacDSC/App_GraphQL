@@ -1,9 +1,7 @@
-const App = require('./app/app')
+const { App, log } = require('./app/app')
 
 
 
-App.then((server) => {
-    server.start(() => {
-        console.log('Server is Running port 4000')
-    })
-}).catch((err) => console.log(err))
+App.start(() => {
+    log.info('Server is Running port 4000')
+})

@@ -11,7 +11,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "cors": "^2.8.5",
         "graphql": "^0.13.2",
-        "graphql-yoga": "^1.18.3"
+        "graphql-yoga": "^1.18.3",
+        "mysql": "^2.18.1",
+        "pino": "^7.0.3",
+        "pino-http": "^5.8.0",
+        "pino-pretty": "^7.1.0"
     }
 }

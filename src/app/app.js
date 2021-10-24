@@ -1,18 +1,39 @@
 const { GraphQLServer } = require('graphql-yoga')
 const path = require('path')
+const cors = require('cors')
+
+const logger = require('pino')({
+    level: 'debug',
+    prettyPrint: {
+        levelFirst: true,
+        colorize: true
+    }
+})
+
+const pinoHttp = require('pino-http')({ logger })
+
+
 const { resolvers } = require('../routers/resolvers')
-const { typeDefs } = require('../schemas/typeDefs')
+    //const { typeDefs } = require('../schemas/typeDefs')
+const typeDefs = path.resolve(__dirname, '../', 'schemas', 'schemas.graphql')
+
+
+
 
 class App {
     constructor() {
-        this.GraphQL()
+        this.server = new GraphQLServer({ typeDefs, resolvers })
+        this.PinoLogger()
     }
-    async GraphQL() {
-        const server = new GraphQLServer({ typeDefs, resolvers })
-        return server
+    PinoLogger() {
+        this.server.use(pinoHttp)
     }
+    cors() {
+        this.server.use(cors())
+    }
+
 
 }
 
 
-module.exports = new App().GraphQL()
+module.exports = { App: new App().server, log: logger }

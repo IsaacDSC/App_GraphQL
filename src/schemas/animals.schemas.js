@@ -1,24 +1,3 @@
-/* const animals = [{
-        animal: 'dog',
-        emoji: '🐶'
-    },
-    {
-        animal: 'cat',
-        emoji: '🐱'
-    },
-    {
-        animal: 'pig',
-        emoji: '🐷'
-    },
-    {
-        animal: 'cow',
-        emoji: '🐮'
-    },
-    {
-        animal: 'chicken',
-        emoji: '🐔'
-    }
-]; */
 const typeDefs = `
       type Animal {
         animal: String
